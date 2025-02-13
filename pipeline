@@ -1,13 +1,19 @@
-pipeline{
-agent any
-stages{
-stage("p2 one"){
-steps{
-echo "good night"
+pipeline {
+    agent any
+    stages {
+        stage('Branch Check') {
+            steps {
+                script {
+                    if (env.BRANCH_NAME == 'main') {
+                        echo "Deploying from the main branch."
+                    } else if (env.BRANCH_NAME == 'dev') {
+                        echo "This is the development branch."
+                    } else {
+                        echo "This is a feature branch: ${env.BRANCH_NAME}"
+                    }
+                }
+            }
+        }
+    }
+}
 
-}
-}
-
-}
-
-}
