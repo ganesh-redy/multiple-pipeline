@@ -1,13 +1,10 @@
-pipeline{
-agent any
-stages{
-stage("p1 one"){
-steps{
-echo "good morning"
-
-}
-}
-
-}
-
+pipeline {
+    agent any
+    stages {
+        stage('Print Branch Name') {
+            steps {
+                echo "Running on branch: ${env.BRANCH_NAME}"
+            }
+        }
+    }
 }
