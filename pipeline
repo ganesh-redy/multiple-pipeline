@@ -1,9 +1,9 @@
 pipeline{
 agent any
 stages{
-stage("p1 one"){
+stage("p2 one"){
 steps{
-echo "good morning"
+echo "good night"
 
 }
 }
